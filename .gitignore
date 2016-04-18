@@ -1,0 +1,8 @@
+node_modules
+npm-debug.log
+tmp
+
+#Meteor app files
+app/node_modules
+app/private
+app/npm-debug.log
