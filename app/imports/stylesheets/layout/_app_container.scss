@@ -1,0 +1,18 @@
+//apply a natural box layout model to all elements, but allowing components to change - http://www.paulirish.com/2012/box-sizing-border-box-ftw/;
+html,body {
+  box-sizing: border-box;
+}
+*, *:before, *:after { box-sizing: inherit; }
+
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  // min-height is needed for pages that might scroll, ie they may contain _more_ than 100% of viewport height
+  min-height: 100%;
+
+  // prevent unwanted scroll-bars
+  margin: 0;
+  padding: 0;
+}

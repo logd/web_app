@@ -19,3 +19,4 @@ react-meteor-data
 kadira:flow-router
 fourseven:scss
 seba:minifiers-autoprefixer
+blaze-html-templates
