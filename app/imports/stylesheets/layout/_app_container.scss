@@ -16,3 +16,14 @@ body {
   margin: 0;
   padding: 0;
 }
+
+// Full height centered app container
+#app-container {
+  min-height: 100vh;
+  margin: 0 auto;
+  max-width: $app-max-width; // Use max-width for better browser handling of small windows
+  min-width: $app-min-width;
+  padding: $main-left-right-padding;
+  padding-top:$app-header-height + $main-left-right-padding;
+
+}
