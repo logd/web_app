@@ -1,7 +1,7 @@
 import { createContainer } from 'meteor/react-meteor-data'
 import { Meteor } from 'meteor/meteor'
 import { Notes } from '../api/notes/notes'
-import { NoteDetail } from '../pages/note_detail'
+import { DetailView } from '../ui/layouts/detail_view'
 
 export default createContainer((props) => {
 
@@ -14,4 +14,4 @@ export default createContainer((props) => {
     note: Notes.findOne({_id: id })
   }
 
-}, NoteDetail)
+}, DetailView)
