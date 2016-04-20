@@ -2,9 +2,9 @@ import { Mongo } from 'meteor/mongo'
 import { Meteor } from 'meteor/meteor'
 // import { Astro } from 'meteor/jagi:astronomy'
 
-const Notes = new Mongo.Collection('notes')
+export const Notes = new Mongo.Collection('notes')
 
-const NoteSchema = Astro.Class({
+export const NoteSchema = Astro.Class({
 	name: 'Note',
 	collection: Notes,
 	fields: {
@@ -40,6 +40,7 @@ const NoteSchema = Astro.Class({
     // },
   }
 })
+
 // ownerId: Meteor.userId(),
 // Validators.maxLength(AppLib.notes.content.maxLength),
 // Validators.maxLength(AppLib.notes.title.maxLength),

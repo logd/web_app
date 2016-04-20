@@ -1,18 +1,12 @@
 import React from 'react'
 import autoBind from 'react-autobind'
-// import { Meteor } from 'meteor/meteor'
 import '../api/notes/notes'
-
-// import { Session } from 'meteor/session'
-// import { FlowRouter } from 'meteor/kadira:flow-router'
 import { SingleFieldSubmit } from '../ui/inputs/single_field_submit'
+import NotesListContainer from '../containers/notes_list_container'
 
 export class Homepage extends React.Component {
   constructor(props){
     super(props)
-    // this.state = {
-    //   showNewNoteForm: false
-    // }
     autoBind(this)
   }
   handleCreateNote(title) {
@@ -34,7 +28,9 @@ export class Homepage extends React.Component {
 
   render() {
 
-    return <div className="app-container"><SingleFieldSubmit placeholder="New Note..." handleSubmit={this.handleCreateNote} /></div>
+    return <div className="app-container"><SingleFieldSubmit placeholder="New Note..." handleSubmit={this.handleCreateNote} />
+    <div><NotesListContainer /></div>
+    </div>
       
   }
 }
