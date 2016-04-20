@@ -13,7 +13,7 @@ export class EditableContent extends React.Component {
   }
   
   toggleEditMode(){
-     this.setState({ isEditing: !this.state.isEditing })
+    this.setState({ isEditing: !this.state.isEditing })
   }
   // setEditMode(){
   //   this.setState({ isEditing: true })
@@ -23,17 +23,28 @@ export class EditableContent extends React.Component {
   //    this.setState({ isEditing: false })
   // }
 
-  showField(){
+  showContent(content){
 
-    return this.state.isEditing?
-      FOO
-    : 
-      <span className="editable" onClick={this.toggleEditMode}>{this.props.content}</span>
-    ;
+    const
+      isEmpty          = content === ""
+      ,
+      emptyMsg         =  <div className="centered gray-pill help-text">
+                           Empty Note
+                          </div>
+      ,
+      displayedContent = isEmpty? emptyMsg : content
+
+    return  <span className="editable" onClick={this.toggleEditMode}>
+              {displayedContent}
+            </span>
   }
 
   render(){
-    return this.showField()
+    return this.state.isEditing?
+      FOO
+    : 
+      this.showContent(this.props.content)
+    ;
   }
 }
 
@@ -46,3 +57,10 @@ EditableContent.propTypes = {
 EditableContent.defaultProps = {
   isEditing: false
 }
+
+ // noteContent(){
+ //    return this.data.note.content === ""?
+ //      <div className="centered gray-pill help-text">Empty note</div>
+ //    : 
+ //      <ReactMarkdown source={this.data.note.content} />
+ //  }
