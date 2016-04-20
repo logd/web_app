@@ -10,7 +10,7 @@ export default createContainer((props) => {
 	  subscription = Meteor.subscribe('notes.detail', id)
 
   return {
-    subsReady:subscription.ready(),
+    subsReady: subscription.ready(),
     note: Notes.findOne({_id: id })
   }
 
