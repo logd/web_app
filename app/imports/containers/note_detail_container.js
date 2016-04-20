@@ -7,11 +7,13 @@ export default createContainer((props) => {
 
 	const
 	  id = props.id,
-	  subscription = Meteor.subscribe('notes.detail', id)
+	  subscription = Meteor.subscribe('notes.detail', id),
+	  handleUpdates = () => { }
 
   return {
     subsReady: subscription.ready(),
-    note: Notes.findOne({_id: id })
+    note: Notes.findOne({_id: id }),
+    handleUpdates: handleUpdates
   }
 
 }, DetailView)
