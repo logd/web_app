@@ -28,11 +28,11 @@ export class Homepage extends React.Component {
 
   render() {
 
-    return <div className="app-container"><SingleFieldSubmit placeholder="New Note..." handleSubmit={this.handleCreateNote} />
-    <div><NotesListContainer /></div>
-    </div>
-      
+    return <div className="app-container">
+      <SingleFieldSubmit placeholder="New Note..." handleSubmit={this.handleCreateNote} />
+      <div>
+        <NotesListContainer />
+      </div>
+    </div>     
   }
 }
-
-   // <SingleFieldSubmit placeholder="New Note..." handleInput={this.handleCreateNote} maxLength={AppLib.notes.title.maxLength} handleOnBlur={this.cancelNewNote} />
