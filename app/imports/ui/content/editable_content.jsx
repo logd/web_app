@@ -1,6 +1,7 @@
 import React from 'react'
 import autoBind from 'react-autobind'
-// import TextFieldAutoSave from '../forms/TextFieldAutoSave.jsx'
+import { TextFieldAutoSave } from '../forms/text_field_autosave'
+//<ReactMarkdown source={this.data.note.content} />
 
 export class EditableContent extends React.Component {
 
@@ -41,7 +42,7 @@ export class EditableContent extends React.Component {
 
   render(){
     return this.state.isEditing?
-      FOO
+      <TextFieldAutoSave inputValue={this.props.content} />
     : 
       this.showContent(this.props.content)
     ;
@@ -57,10 +58,3 @@ EditableContent.propTypes = {
 EditableContent.defaultProps = {
   isEditing: false
 }
-
- // noteContent(){
- //    return this.data.note.content === ""?
- //      <div className="centered gray-pill help-text">Empty note</div>
- //    : 
- //      <ReactMarkdown source={this.data.note.content} />
- //  }
