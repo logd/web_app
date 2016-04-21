@@ -12,7 +12,7 @@ export class EditableContent extends React.Component {
     }
     autoBind(this)
   }
-  
+
   toggleEditMode(){
     this.setState({ isEditing: !this.state.isEditing })
   }
@@ -42,14 +42,14 @@ export class EditableContent extends React.Component {
 
   render(){
     return this.state.isEditing?
-      <TextFieldAutoSave inputValue={this.props.content} />
-    : 
+      <TextFieldAutoSave inputValue={this.props.content} {...this.props} />
+    :
       this.showContent(this.props.content)
     ;
   }
 }
 
-EditableContent.propTypes = { 
+EditableContent.propTypes = {
   content:       React.PropTypes.string.isRequired,
   handleUpdates: React.PropTypes.func.isRequired,
   isEditing:     React.PropTypes.bool

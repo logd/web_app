@@ -1,5 +1,5 @@
 import React from 'react'
-import { EditableContent } from '../content/editable_content'
+import { EditableContent } from '../ui/content/editable_content'
 
 export const DetailView = (props) => {
     return props.subsReady? <div className="app-container">

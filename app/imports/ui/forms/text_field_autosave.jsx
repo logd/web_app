@@ -1,6 +1,8 @@
 import React from 'react'
 import autoBind from 'react-autobind'
+import { _ } from 'meteor/underscore'
 import { TextBtn } from '../buttons/text_btn'
+import AppUtils from '../../utils/app_utils'
 
 export class TextFieldAutoSave extends React.Component {
 
@@ -35,7 +37,7 @@ export class TextFieldAutoSave extends React.Component {
   }
 
   handleOnKeyPress(e) {
-    if (AppLib.forms.shiftReturn(e)) {
+    if (AppUtils.forms.shiftReturn(e)) {
       e.preventDefault()
       this.doneEditing(e)
       return false
@@ -45,43 +47,43 @@ export class TextFieldAutoSave extends React.Component {
 	render() {
 
     return <form className="main-content-editing">
-                          <textarea
-                            className="flex-main-content"
-                            placeholder={this.props.placeholder}
-                            value={this.state.inputValue}
-                            onChange={this.saveChanges}
-                            autoFocus={this.props.autoFocus}
-                            onBlur={this.props.doneEditing}
-                            onKeyPress={this.handleOnKeyPress}
-                          />
-                          <div className="form-controls flex-column-centered">
-                            <TextBtn label="Done" />
-                            <div className="help-text block-padding">(Or use Shift + Return)</div>
-                            </div>
-                        </form>
-
-    // let singleLineForm = <form className="single-field-submit" onSubmit={this.doneEditing}>
-    //                        <input
-    //                           type="text"
-    //                           placeholder={this.props.placeholder}
-    //                           value={this.state.inputValue}
-    //                           onChange={this.saveChanges}
-    //                           autoFocus={this.props.autoFocus}
-    //                           onBlur={this.handleOnBlur}
-    //                         />
-    //                        <input type="submit" style={{display:'none'}} />
-    //                     </form>
-
-    // return this.props.multiLine? multiLineForm : singleLineForm 
+            <textarea
+              className="flex-main-content"
+              placeholder={this.props.placeholder}
+              value={this.state.inputValue}
+              onChange={this.saveChanges}
+              autoFocus={this.props.autoFocus}
+              onBlur={this.props.doneEditing}
+              onKeyPress={this.handleOnKeyPress}
+            />
+	          <div className="form-controls flex-column-centered">
+	            <TextBtn label="Done" />
+	            <div className="help-text block-padding">(Or use Shift + Return)</div>
+	            </div>
+          </form>
 	}
 }
 
-TextFieldAutoSave.propTypes = { 
+TextFieldAutoSave.propTypes = {
   inputValue: React.PropTypes.string
 }
 
-TextFieldAutoSave.defaultProps = { 
+TextFieldAutoSave.defaultProps = {
   inputValue:"",
   autoFocus: false,
   multiLine: false
 }
+
+// let singleLineForm = <form className="single-field-submit" onSubmit={this.doneEditing}>
+//                        <input
+//                           type="text"
+//                           placeholder={this.props.placeholder}
+//                           value={this.state.inputValue}
+//                           onChange={this.saveChanges}
+//                           autoFocus={this.props.autoFocus}
+//                           onBlur={this.handleOnBlur}
+//                         />
+//                        <input type="submit" style={{display:'none'}} />
+//                     </form>
+
+// return this.props.multiLine? multiLineForm : singleLineForm
