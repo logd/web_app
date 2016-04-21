@@ -42,7 +42,7 @@ export class EditableContent extends React.Component {
 
   render(){
     return this.state.isEditing?
-      <TextFieldAutoSave inputValue={this.props.content} {...this.props} />
+      <TextFieldAutoSave inputValue={this.props.content} handleUpdates={this.props.handleUpdates} field={this.props.field} />
     :
       this.showContent(this.props.content)
     ;

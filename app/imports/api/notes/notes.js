@@ -28,13 +28,8 @@ export const NoteSchema = Astro.Class({
     },
     updatedAt: {
       type: 'date',
-      validator:Validators.and(
-        [
-          Validators.required(),
-          Validators.date()
-        ]
-      )
-    },
+      validator: Validators.date()
+    }
     // ownerId: {
     //   type: 'string' //owner id is not validated because it is never published/sent to the client (and the object returned from the client is what is validated, meaning it would return null)
     // },
@@ -47,7 +42,7 @@ export const NoteSchema = Astro.Class({
 
  Meteor.methods({
 
-	'/note/create': (title) => { 
+	'/note/create': (title) => {
 		const note = new NoteSchema()
     note.set({
       title: title,
@@ -55,17 +50,39 @@ export const NoteSchema = Astro.Class({
       updatedAt: new Date()
     })
 
-    if (note.validate()) { 
+    if (note.validate()) {
       note.save()
       return note
     }
     note.throwValidationException()
   },
 
-  '/note/save': (note) => { 
+	  '/note/update/content': (noteParams) => {
+			const note = Notes.findOne({_id: noteParams.id })
+
+			note.set({
+				content: noteParams.content,
+				updatedAt: new Date()
+			})
+	    if (note.validate()) {
+	      note.save()
+	      return
+	    }
+	    note.throwValidationException()
+	  },
+
+  '/note/save': (noteFields) => {
+		{
+			title: "value"
+		}
+		note.set({
+			title: noteFields.title,
+	 // ownerId: Meteor.userId(),
+			updatedAt: new Date()
+		})
     if (note.validate()) {
       note.save()
-      return note
+      return
     }
     note.throwValidationException()
   },
