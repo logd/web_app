@@ -30,7 +30,7 @@ body {
 
   padding: 0;
   //$app-container-padding
-  //padding-top: $app-header-height + $app-container-padding;
+  padding-top: $app-header-height;
 
     max-width: $app-container-max-width; // Use max-width for better browser handling of small windows
   min-width: $app-container-min-width;
