@@ -5,21 +5,23 @@
   right: 0;
   z-index: $z-index-appheader;
   height:  $app-header-height;
-  padding: 0 $app-container-padding;
+  padding: $app-container-padding;
+ 
 
-  //child layout
+  //internal layout
   display: flex;
   flex-flow: row nowrap;
   align-items:center;
 
   .header-center {
     flex: 1 0 auto;
+    text-align: center;
+  
 
     .page-title {
       @include truncate_text();
       padding-left: 1em;
       padding-right: 1em;
-      text-align: center;
     }
   }
 }
