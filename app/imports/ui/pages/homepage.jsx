@@ -11,7 +11,8 @@ export class Homepage extends React.Component {
   }
   handleCreateNote(title) {
 
-    // if (AppLib.str.isEmpty(title)) { return }
+    // TODO: add check for empty and move this to the container
+    // I think this entire page is unneded, can just be handled in the container if (AppLib.str.isEmpty(title)) { return }
   
     Meteor.call('/note/create', title, (err, result) => {
       if (!err) {
