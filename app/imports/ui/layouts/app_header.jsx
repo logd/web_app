@@ -1,4 +1,5 @@
 import React from 'react'
+import { PageTitle } from '../content/page_title'
 
 export const AppHeader = (props) =>
   <header id="app-header">
@@ -19,6 +20,6 @@ AppHeader.propTypes = {
   headerRight: React.PropTypes.object
 }
 
-// AppHeader.defaultProps = { 
-//   headerCenter: <PageTitle />
-// }
+AppHeader.defaultProps = { 
+  headerCenter: <PageTitle />
+}
