@@ -46,9 +46,8 @@ export class TextFieldAutoSave extends React.Component {
 
 	render() {
 
-    return <form className="main-content-editing">
-            <textarea
-              className="flex-main-content"
+    return <form>
+            <textarea className="invisible"
               placeholder={this.props.placeholder}
               value={this.state.inputValue}
               onChange={this.saveChanges}

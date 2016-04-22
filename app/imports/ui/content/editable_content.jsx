@@ -49,5 +49,5 @@ EditableContent.propTypes = {
 }
 
 EditableContent.defaultProps = {
-  isEditing: false
+  isEditing: true
 }

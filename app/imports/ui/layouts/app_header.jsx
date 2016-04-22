@@ -2,8 +2,8 @@ import React from 'react'
 import { PageTitle } from '../content/page_title'
 
 export const AppHeader = (props) =>
-  <header id="app-header">
-  	  <div className="header-left">
+  <div id="app-header">
+  	<div className="header-left">
 	   {props.headerLeft}
 	  </div>
 	  <div className="header-center">
@@ -12,12 +12,12 @@ export const AppHeader = (props) =>
 	  <div className="header-right">
       {props.headerRight}
     </div>
-  </header>
+  </div>
 
 AppHeader.propTypes = {
-  headerLeft: React.PropTypes.object,
+  headerLeft:   React.PropTypes.object,
   headerCenter: React.PropTypes.object,
-  headerRight: React.PropTypes.object
+  headerRight:  React.PropTypes.object
 }
 
 AppHeader.defaultProps = { 
