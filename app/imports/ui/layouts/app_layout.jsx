@@ -4,5 +4,7 @@ import { AppHeader } from './app_header'
 export const AppLayout = ({content}) =>
   <div id="app-container">
     <AppHeader />
-   {content()}
+    <div id="main-content">
+      {content()}
+    </div>
   </div>

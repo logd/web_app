@@ -4,10 +4,13 @@
 @import "core/mixins";
 @import "core/helpers";
 
-//LAYOUT
+//LAYOUTS
 @import "layouts/app_container";
 @import "layouts/app_header";
-@import "layouts/lists";
+@import "layouts/main_content";
+
+//COMPONENTS
+@import "components/lists";
 
 
 //THEME
