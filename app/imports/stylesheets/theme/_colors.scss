@@ -27,8 +27,18 @@ body {
 
 
 // --------------------------------
-// MAIN CONTENT
+// LISTS
 // --------------------------------
+
+.item-list {
+
+	& > li {
+	  border-bottom: 1px solid $color-gray-7;
+	  &:last-child {
+      border-bottom: none;
+    }
+	}
+}
 
 // --------------------------------
 // BUTTONS, ICONS

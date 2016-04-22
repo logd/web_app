@@ -16,13 +16,6 @@ export class EditableContent extends React.Component {
   toggleEditMode(){
     this.setState({ isEditing: !this.state.isEditing })
   }
-  // setEditMode(){
-  //   this.setState({ isEditing: true })
-  // }
-
-  // doneEditing(){
-  //    this.setState({ isEditing: false })
-  // }
 
   showContent(content){
 

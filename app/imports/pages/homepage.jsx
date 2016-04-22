@@ -27,8 +27,7 @@ export class Homepage extends React.Component {
   }
 
   render() {
-
-    return <div id="main-content"> <NotesListContainer /> </div>     
+    return <NotesListContainer />     
   }
 }
 // <SingleFieldSubmit placeholder="New Note..." handleSubmit={this.handleCreateNote} />

@@ -1,0 +1,26 @@
+.item-list {
+	list-style-type: none;
+  padding-left: 0;
+
+	& > li {
+	  display: flex;
+	  flex-flow: row nowrap;
+	  align-items:center;
+	  padding-top:  $item-list-li-padding;
+	  padding-bottom: $item-list-li-padding;
+
+	  &:first-child {
+      padding-top:0;
+    }
+	  // &:last-child {
+   //    padding-bottom:0;
+   //  }
+	  .item-list-main-content {
+	    flex: 1;  
+	  }
+	  .item-list-secondary-content {
+	  }
+	  
+
+	}
+}
