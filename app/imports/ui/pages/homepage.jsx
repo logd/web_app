@@ -1,7 +1,7 @@
 import React from 'react'
 import autoBind from 'react-autobind'
-import '../api/notes/notes'
-import { SingleFieldSubmit } from '../ui/forms/single_field_submit'
+import '../../api/notes/notes'
+import { SingleFieldSubmit } from '../forms/single_field_submit'
 import NotesListContainer from '../containers/notes_list_container'
 
 export class Homepage extends React.Component {

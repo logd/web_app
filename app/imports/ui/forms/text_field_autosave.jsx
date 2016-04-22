@@ -46,8 +46,8 @@ export class TextFieldAutoSave extends React.Component {
 
 	render() {
 
-    return <form>
-            <textarea className="invisible"
+    return <form className="min-full-height flex-column">
+            <textarea className="invisible flex-main-content"
               placeholder={this.props.placeholder}
               value={this.state.inputValue}
               onChange={this.saveChanges}

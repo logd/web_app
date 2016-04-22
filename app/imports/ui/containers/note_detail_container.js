@@ -1,6 +1,6 @@
 import { createContainer } from 'meteor/react-meteor-data'
 import { Meteor } from 'meteor/meteor'
-import { Notes } from '../api/notes/notes'
+import { Notes } from '../../api/notes/notes'
 import { DetailView } from '../pages/detail_view'
 
 export default createContainer((props) => {

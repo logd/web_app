@@ -1,2 +1,2 @@
 import '../../stylesheets/main.scss'
-import '../../pages/routes'
+import '../../ui/pages/routes'
