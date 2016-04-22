@@ -1,0 +1,29 @@
+#app-header {
+  position: fixed;
+  top: 0;
+  left:0;
+  right: 0;
+  // z-index:$z-index-appheader;
+  // height:$app-header-height;
+  // padding: 0 $app-header-left-right-padding;
+
+  // //child layout
+  // display: flex;
+  // flex-flow: row nowrap;
+  // align-items:center;
+
+  // //Styling
+  // background-color: $primary-color-dark;
+  
+  // .header-center {
+  //   flex: 1 0 auto;
+
+  //   .page-title {
+  //     color:$primary-text-inverted;
+  //     @include truncate_text();
+  //     padding-left: 1em;
+  //     padding-right: 1em;
+  //     text-align: center;
+  //   }
+  // }
+}

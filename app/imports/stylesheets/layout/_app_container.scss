@@ -21,9 +21,9 @@ body {
 #app-container {
   min-height: 100vh;
   margin: 0 auto;
-  max-width: $app-max-width; // Use max-width for better browser handling of small windows
-  min-width: $app-min-width;
-  padding: $main-left-right-padding;
-  padding-top:$app-header-height + $main-left-right-padding;
+  max-width: $app-container-max-width; // Use max-width for better browser handling of small windows
+  min-width: $app-container-min-width;
+  padding: $app-container-padding;
+  padding-top: $app-header-height + $app-container-padding;
 
 }

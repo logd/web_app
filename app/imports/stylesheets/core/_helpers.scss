@@ -17,7 +17,7 @@
 }
 .layout-centered {
   margin: 0 auto;
-  max-width: $centered-block-max-width;
+  max-width: $app-container-max-width / 2;
 }
 
 .full-height {
