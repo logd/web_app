@@ -1,7 +1,7 @@
 import { createContainer } from 'meteor/react-meteor-data'
 import { Meteor } from 'meteor/meteor'
 import { Notes } from '../../api/notes/notes'
-import { DetailView } from '../pages/detail_view'
+import { NoteContent } from '../pages/note_content'
 
 export default createContainer((props) => {
 
@@ -32,4 +32,4 @@ export default createContainer((props) => {
     handleUpdates: handleUpdates
   }
 
-}, DetailView)
+}, NoteContent)

@@ -6,7 +6,7 @@ import { mount } from 'react-mounter'
 import AppContainer from '../containers/app_container'
 // import { Homepage } from './homepage'
 import NotesListContainer from '../containers/notes_list_container'
-import NoteDetailContainer from '../containers/note_detail_container'
+import NoteContentContainer from '../containers/note_content_container'
 
 
 FlowRouter.route('/', {
@@ -22,7 +22,7 @@ FlowRouter.route('/notes/:_id', {
   name: 'noteDetail',
   action(params) {
     mount(AppContainer, {
-      content: () => <NoteDetailContainer id={params._id} />
+      content: () => <NoteContentContainer id={params._id} />
     })
   }
 })

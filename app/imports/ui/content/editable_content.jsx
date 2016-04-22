@@ -17,28 +17,31 @@ export class EditableContent extends React.Component {
     this.setState({ isEditing: !this.state.isEditing })
   }
 
-  showContent(content){
-
-    const
-      isEmpty          = content === ""
-      ,
-      emptyMsg         =  <div className="centered gray-pill help-text">
-                           Empty Note
-                          </div>
-      ,
-      displayedContent = isEmpty? emptyMsg : content
-
-    return  <span className="editable" onClick={this.toggleEditMode}>
-              {displayedContent}
-            </span>
+  contentIsEmpty(content) {
+    return content === ""
   }
+  
+  showEditMode(content){
+    return <TextFieldAutoSave inputValue={content} handleUpdates={this.props.handleUpdates} field={this.props.field} />
+  } 
+  
+  showViewMode(content) {
+    return this.contentIsEmpty(content)?
+        <div className="centered gray-pill help-text">Empty Note</div>
+      :
+        <span className="editable" onClick={this.toggleEditMode}>
+          {content}
+        </span>
+  } 
+   
 
   render(){
+    const content = this.props.content 
+
     return this.state.isEditing?
-      <TextFieldAutoSave inputValue={this.props.content} handleUpdates={this.props.handleUpdates} field={this.props.field} />
+      this.showEditMode(content)
     :
-      this.showContent(this.props.content)
-    ;
+      this.showViewMode(content)
   }
 }
 
@@ -49,5 +52,5 @@ EditableContent.propTypes = {
 }
 
 EditableContent.defaultProps = {
-  isEditing: true
+  isEditing: false
 }
