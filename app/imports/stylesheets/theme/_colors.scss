@@ -1,0 +1,35 @@
+// --------------------------------
+// GLOBAL
+// --------------------------------
+body {
+  background-color: $color-gray-8;
+  color: $base-font-color;
+}
+
+// --------------------------------
+// APP CONTAINER
+// --------------------------------
+#app-container {
+  background-color: $base-bg-color;
+}
+
+
+// --------------------------------
+// APP HEADER
+// --------------------------------
+#app-header {
+	background-color: $primary-color-dark;
+
+  .page-title {
+    color:$primary-text-inverted;
+  }
+}
+
+
+// --------------------------------
+// MAIN CONTENT
+// --------------------------------
+
+// --------------------------------
+// BUTTONS, ICONS
+// --------------------------------

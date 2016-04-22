@@ -8,6 +8,7 @@ html {
   height: 100%;
   width: 100%;
 }
+
 body {
   // min-height is needed for pages that might scroll, ie they may contain _more_ than 100% of viewport height
   min-height: 100%;
@@ -16,14 +17,22 @@ body {
   margin: 0;
   padding: 0;
 }
+// #react-root {
+//   min-height: 100vh;
+// }
 
 // Full height centered app container
 #app-container {
+    display: flex;
+  flex-direction: column;
   min-height: 100vh;
   margin: 0 auto;
-  max-width: $app-container-max-width; // Use max-width for better browser handling of small windows
+
+  padding: 0;
+  //$app-container-padding
+  //padding-top: $app-header-height + $app-container-padding;
+
+    max-width: $app-container-max-width; // Use max-width for better browser handling of small windows
   min-width: $app-container-min-width;
-  padding: $app-container-padding;
-  padding-top: $app-header-height + $app-container-padding;
 
 }
