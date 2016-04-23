@@ -20,18 +20,21 @@ export class NewItemHeader extends React.Component {
 
   //HEADER LEFT
   addItemBtn(){
-    return this.state.addingItem?
-      <IconBtn
-        icon={"clear"}
-        title={"Cancel..."}
-        handleClick={this.toggleAddingItem}
-      />
-    :
-      <IconBtn
-        icon={"add"}
-        title={"Add note..."}
-        handleClick={this.toggleAddingItem}
-      />
+    let icon, title;
+
+    if(this.state.addingItem){
+      icon="clear"
+      title="Cancel"
+    } else {
+      icon="add"
+      title="Add Note"
+    }
+
+    return <IconBtn
+            icon={icon}
+            title={title}
+            handleClick={this.toggleAddingItem}
+           />
   }
 
   //HEADER CENTER
