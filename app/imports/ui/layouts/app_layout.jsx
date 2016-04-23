@@ -1,9 +1,9 @@
 import React from 'react'
-import { AppHeader } from './app_header'
+// import { AppHeader } from './app_header'
 
-export const AppLayout = ({content}) =>
+export const AppLayout = ({header, content}) =>
   <div id="app-container">
-    <AppHeader />
+    {header()}
     <div id="main-content">
       {content()}
     </div>

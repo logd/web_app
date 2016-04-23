@@ -4,7 +4,7 @@ import { mount } from 'react-mounter'
 
 //COMPONENTS
 import AppContainer from '../containers/app_container'
-// import { Homepage } from './homepage'
+import NewNoteContainer from '../containers/new_note_container'
 import NotesListContainer from '../containers/notes_list_container'
 import NoteContentContainer from '../containers/note_content_container'
 
@@ -13,6 +13,7 @@ FlowRouter.route('/', {
   name: 'homepage',
   action() {
     mount(AppContainer, {
+      header: () => <NewNoteContainer />,
       content: () => <NotesListContainer />
     })
   }
