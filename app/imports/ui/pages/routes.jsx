@@ -21,10 +21,10 @@ FlowRouter.route('/', {
 
 FlowRouter.route('/notes/:_id', {
   name: 'noteDetail',
-  action() {
+  action(params) {
     mount(AppContainer, {
-      header: () => <NoteTitleContainer />,
-      content: () => <NoteContentContainer />
+      header: (props) => <NoteTitleContainer id={params._id} {...props} />,
+      content: (props) => <NoteContentContainer id={params._id} {...props} />
     })
   }
 })
