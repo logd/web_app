@@ -2,6 +2,8 @@ import React from 'react'
 import autoBind from 'react-autobind'
 import { AppHeaderLayout } from '../layouts/app_header_layout'
 import { IconBtn } from '../buttons/icon_btn'
+import { PageTitle } from '../content/page_title'
+import { SingleFieldSubmit } from './single_field_submit'
 
 
 export class NewItemHeader extends React.Component {
@@ -38,12 +40,16 @@ export class NewItemHeader extends React.Component {
   }
 
   //HEADER CENTER
+  // <SingleFieldSubmit placeholder="New Note..." handleSubmit={props.handleCreateNote} />
 
-  showNewNoteForm(){
-    // return this.state.showNewNoteForm?
-    //   <SingleFieldSubmit placeholder="New Note..." handleInput={this.handleCreateNote} maxLength={AppLib.notes.title.maxLength} handleOnBlur={this.cancelNewNote} />
-    // :
-    //   <PageTitle pageTitle={this.setNotesListTitle()} />
+  toggleForm(){
+    return this.state.addingItem?
+      <SingleFieldSubmit
+       placeholder="New Note..."
+       handleSubmit={this.props.handleCreateNote}
+       handleOnBlur={this.toggleAddingItem} />
+    :
+      <PageTitle />
   }
 
     showUserMenu(name){
@@ -62,7 +68,10 @@ export class NewItemHeader extends React.Component {
 
   render() {
 
-    return <AppHeaderLayout headerLeft={this.addItemBtn()} />
+    return <AppHeaderLayout
+             headerLeft={this.addItemBtn()}
+             headerCenter={this.toggleForm()}
+           />
       
   }
 }

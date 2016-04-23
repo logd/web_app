@@ -2,7 +2,7 @@ import { createContainer } from 'meteor/react-meteor-data'
 import { NewItemHeader }  from '../forms/new_item_header'
 
 export default createContainer(() => {
-
+    //TODO - pass in user data into this container
 	const handleCreateNote = (title) => {
 
     // TODO: add check for empty and move this to the container
