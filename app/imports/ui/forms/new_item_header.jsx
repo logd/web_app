@@ -8,12 +8,42 @@ export class NewItemHeader extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      showNewItemForm: false
+      addingItem: false
     }
     autoBind(this)
   }
 
-  showUserMenu(){
+  //TOGGLE STATE
+  toggleAddingItem(){
+    this.setState({ addingItem: !this.state.addingItem })
+  }
+
+  //HEADER LEFT
+  addItemBtn(){
+    return this.state.addingItem?
+      <IconBtn
+        icon={"clear"}
+        title={"Cancel..."}
+        handleClick={this.toggleAddingItem}
+      />
+    :
+      <IconBtn
+        icon={"add"}
+        title={"Add note..."}
+        handleClick={this.toggleAddingItem}
+      />
+  }
+
+  //HEADER CENTER
+
+  showNewNoteForm(){
+    // return this.state.showNewNoteForm?
+    //   <SingleFieldSubmit placeholder="New Note..." handleInput={this.handleCreateNote} maxLength={AppLib.notes.title.maxLength} handleOnBlur={this.cancelNewNote} />
+    // :
+    //   <PageTitle pageTitle={this.setNotesListTitle()} />
+  }
+
+    showUserMenu(name){
    // if(this.data.signedIn){
    //   const menu = <ul className='menu-list'>
    //     <li>{this.data.currentUser.profile.firstName}</li>
@@ -27,23 +57,13 @@ export class NewItemHeader extends React.Component {
   }
 
 
-  showNewNoteBtn(){
-    // return this.state.showNewNoteForm? 
-    //   <button className="icon-btn btn-small" alt="Cancel new note" title="Cancel new note"><i className="material-icons">clear</i></button>
-    // :
-    //   <IconBtn handleClick={this.toggleNewNoteForm} title="New Note" icon="add" />
-  } 
- 
-  showNewNoteForm(){
-    // return this.state.showNewNoteForm?
-    //   <SingleFieldSubmit placeholder="New Note..." handleInput={this.handleCreateNote} maxLength={AppLib.notes.title.maxLength} handleOnBlur={this.cancelNewNote} />
-    // :
-    //   <PageTitle pageTitle={this.setNotesListTitle()} />
-  } 
+  render() {
 
-  // toggleNewNoteForm(){
-  //   this.setState({ showNewNoteForm: !this.state.showNewNoteForm })
-  // } 
+    return <AppHeaderLayout headerLeft={this.addItemBtn()} />
+      
+  }
+}
+
 
   // cancelNewNote(){
   //   this.setState({ showNewNoteForm: false })
@@ -67,9 +87,7 @@ export class NewItemHeader extends React.Component {
   // }
 
 
-  render() {
-
-    return <AppHeaderLayout />
-      
-  }
-}
+    // return this.state.showForm? 
+    //   <IconBtn handleClick={this.toggleNewItemForm} title="Cancel adding new note" icon="clear" />
+    // :
+    //   <IconBtn handleClick={this.toggleNewItemForm} title="New Note" icon="add" />
