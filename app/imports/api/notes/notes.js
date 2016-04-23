@@ -56,6 +56,8 @@ export const NoteSchema = Astro.Class({
     })
 
     if (note.validate()) {
+      //get note count and update noteCount in session
+      
       note.save()
       return note
     }

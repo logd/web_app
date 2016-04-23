@@ -3,7 +3,7 @@ import autoBind from 'react-autobind'
 import { EditableContent } from '../content/editable_content'
 
 export const NoteContent = (props) => {
-    return props.subsReady?
+    return props.subReady?
       <EditableContent
         field="content"
         content={props.note.content}

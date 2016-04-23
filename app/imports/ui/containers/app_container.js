@@ -5,7 +5,8 @@ import { AppLayout }  from '../layouts/app_layout'
 export default createContainer(() => {
  
   return {
-    currentUser: "foo"
+    currentUser: "foo",
+    routeName: "bar"
   }
 
 }, AppLayout)
