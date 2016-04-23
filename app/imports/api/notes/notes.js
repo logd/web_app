@@ -57,7 +57,7 @@ export const NoteSchema = Astro.Class({
 
     if (note.validate()) {
       note.save()
-      return
+      return note
     }
     note.throwValidationException()
   },

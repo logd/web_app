@@ -40,8 +40,6 @@ export class NewItemHeader extends React.Component {
   }
 
   //HEADER CENTER
-  // <SingleFieldSubmit placeholder="New Note..." handleSubmit={props.handleCreateNote} />
-
   toggleForm(){
     return this.state.addingItem?
       <SingleFieldSubmit
@@ -51,20 +49,6 @@ export class NewItemHeader extends React.Component {
     :
       <PageTitle />
   }
-
-    showUserMenu(name){
-   // if(this.data.signedIn){
-   //   const menu = <ul className='menu-list'>
-   //     <li>{this.data.currentUser.profile.firstName}</li>
-   //     <li><a href="/logout">Sign Out</a></li>
-   //    </ul>
-
-   //  return <OptionsMenu menu={menu} />
-   // }
-  
-   //  return null
-  }
-
 
   render() {
 
@@ -76,30 +60,14 @@ export class NewItemHeader extends React.Component {
   }
 }
 
+    // showUserMenu(name){
+   // if(this.data.signedIn){
+   //   const menu = <ul className='menu-list'>
+   //     <li>{this.data.currentUser.profile.firstName}</li>
+   //     <li><a href="/logout">Sign Out</a></li>
+   //    </ul>
 
-  // cancelNewNote(){
-  //   this.setState({ showNewNoteForm: false })
+   //  return <OptionsMenu menu={menu} />
+   // }  
+   //  return null
   // }
-
-  // handleCreateNote(title) {
-
-  //   if (AppLib.str.isEmpty(title)) { return }
-  
-  //   Meteor.call('/note/create', title, (err, result) => {
-  //     if (!err) {
-  //       if (Meteor.isClient) {
-  //        Session.set("newNote", true) 
-  //       }
-  //       FlowRouter.go("noteDetail", {_id: result._id})  
-  //     } else {
-  //       note.catchValidationException(err)
-  //       console.log('there was an error: ' + err.reason)
-  //     }
-  //   })
-  // }
-
-
-    // return this.state.showForm? 
-    //   <IconBtn handleClick={this.toggleNewItemForm} title="Cancel adding new note" icon="clear" />
-    // :
-    //   <IconBtn handleClick={this.toggleNewItemForm} title="New Note" icon="add" />
