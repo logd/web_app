@@ -3,10 +3,27 @@ import React from 'react'
 import { mount } from 'react-mounter'
 
 //COMPONENTS
-import AppContainer from '../containers/app_container'
-import { NewNoteContainer } from '../containers/new_note_container'
-import NotesListContainer from '../containers/notes_list_container'
-import { NoteTitleContainer, NoteContentContainer } from '../containers/note_detail_container'
+import AppContainer from '../../ui/containers/app_container'
+import { NewNoteContainer } from '../../ui/containers/new_note_container'
+import NotesListContainer from '../../ui/containers/notes_list_container'
+import { NoteTitleContainer, NoteContentContainer } from '../../ui/containers/note_detail_container'
+
+
+function redirectIfAnonymous(context, redirect) {
+  if(!Meteor.userId() || Meteor.loggingIn()){
+    // console.log("context path: ", context.path)
+    Session.set("requestedPage", context.path)
+    Session.set("loginRedirect", true)
+    // Session.set("requestedPage", context.path)
+    redirect('login')
+  }
+}
+function redirectIfSignedIn(context, redirect) {
+  if (Meteor.userId()) {
+    //console.log("already signed in")
+    redirect('homepage') 
+  }
+}
 
 
 FlowRouter.route('/', {
@@ -29,6 +46,15 @@ FlowRouter.route('/notes/:_id', {
   }
 })
 
+FlowRouter.route('/login', {
+  name: 'login',
+  triggersEnter: [redirectIfSignedIn],
+  action() {
+    mount(MainLayout, {
+      content: () => <Login />
+    })
+  }
+})
 
 // How to pass through a param into a component
 // FlowRouter.route('/notes/:_id', {
